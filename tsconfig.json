@@ -3,12 +3,12 @@
     "target": "es6",
     "module": "commonjs",
     "moduleResolution": "node",
-    "sourceMap": true,
-    "forceConsistentCasingInFileNames": true,
-
+    "sourceMap": false,
+    "declaration": true,
     "rootDir": ".",
     "outDir": "build",
-    "removeComments": true
+    "strict": true,
+    "forceConsistentCasingInFileNames": true
   },
   "include": ["src/**/*"]
 }

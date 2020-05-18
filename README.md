@@ -1,7 +1,9 @@
-# Typescript Package Starter
+# faunadb-io-types
 
-A starter template using:
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
 
-- Typescript
-- ESLint with Prettier
-- Jest for tests and coverage
+installation:
+
+```bash
+npm install faunadb-io-types
+```

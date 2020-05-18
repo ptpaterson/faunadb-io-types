@@ -14,5 +14,7 @@ module.exports = {
     'prettier/@typescript-eslint',
     'plugin:prettier/recommended',
   ],
-  rules: {},
+  rules: {
+    'jest/expect-expect': 0,
+  },
 }
