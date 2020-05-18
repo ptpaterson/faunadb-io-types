@@ -4,7 +4,7 @@
 
 io-ts codecs and helpers for using with FaunaDB
 
-## Installation
+# Installation
 
 ```bash
 npm install faunadb-io-types

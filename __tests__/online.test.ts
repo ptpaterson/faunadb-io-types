@@ -16,7 +16,7 @@ import { assertFailure, assertSuccess } from './helpers'
 
 const secret = process.env.FAUNADB_ADMIN_KEY
 const client = new Client({ secret })
-const queryFactory = clientTask(client)
+const query = clientTask(client)
 
 const user1Query = q.Ref(q.Collection('User'), '263980061820977682')
 const user1Value = new values.Ref(
@@ -26,7 +26,7 @@ const user1Value = new values.Ref(
 
 describe('clientTask', () => {
   it('works on its own', async () => {
-    await queryFactory(user1Query)().then(
+    await query(user1Query)().then(
       E.map((res) => expect(res).toEqual(user1Value))
     )
   })

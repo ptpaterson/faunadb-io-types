@@ -5,8 +5,8 @@
     "moduleResolution": "node",
     "sourceMap": false,
     "declaration": true,
-    "rootDir": ".",
-    "outDir": "build",
+    "rootDir": "./src",
+    "outDir": "./build",
     "strict": true,
     "forceConsistentCasingInFileNames": true
   },
