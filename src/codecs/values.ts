@@ -49,13 +49,13 @@ export const QueryC = new t.Type<values.Query>(
 export type QueryC = values.Query
 
 // values.Document
-export type DocumentC<T extends t.Props> = t.TypeC<{
+export type DocumentC<T extends t.TypeC<t.Props>> = t.TypeC<{
   ref: typeof RefC
   ts: t.NumberC
-  data: t.TypeC<T>
+  data: T
 }>
-export const DocumentC = <T extends t.Props>(
-  dataType: t.TypeC<T>
+export const DocumentC = <T extends t.TypeC<t.Props>>(
+  dataType: T
 ): DocumentC<T> =>
   t.type({
     ref: RefC,
@@ -64,10 +64,10 @@ export const DocumentC = <T extends t.Props>(
   })
 
 // values.Page
-export type PageC<T extends t.Props> = t.IntersectionC<
+export type PageC<T extends t.TypeC<t.Props>> = t.IntersectionC<
   [
     t.TypeC<{
-      data: t.ArrayC<t.TypeC<T>>
+      data: t.ArrayC<T>
     }>,
     t.PartialC<{
       after: typeof ExprC
@@ -75,7 +75,7 @@ export type PageC<T extends t.Props> = t.IntersectionC<
     }>
   ]
 >
-export const PageC = <T extends t.Props>(dataType: t.TypeC<T>): PageC<T> =>
+export const PageC = <T extends t.TypeC<t.Props>>(dataType: T): PageC<T> =>
   t.intersection([
     t.type({
       data: t.array(dataType),
