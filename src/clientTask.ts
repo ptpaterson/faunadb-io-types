@@ -5,12 +5,12 @@ import { Client, Expr, errors } from 'faunadb'
 
 export const clientTask = (client: Client) => <T>(
   expr: Expr
-): TE.TaskEither<errors.FaunaError, T> =>
+): TE.TaskEither<errors.FaunaHTTPError | Error, T> =>
   TE.tryCatch<errors.FaunaError, T>(
     () => client.query(expr),
     (e) => {
-      if (e instanceof errors.FaunaError) return e
+      if (e instanceof errors.FaunaHTTPError) return e
 
-      return new errors.FaunaError('Unknown Error')
+      return new Error('Unknown Error')
     }
   )

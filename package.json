@@ -1,6 +1,6 @@
 {
   "name": "faunadb-io-types",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "io-ts codecs and helpers for using with FaunaDB",
   "main": "build/index.js",
   "files": [
